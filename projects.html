@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Nicorici Ioan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        body { background-color: #0a0a0a; color: #d1d5db; padding-top: 70px; }
+        .nav-glass { position: fixed; top: 0; left: 0; width: 100%; z-index: 50; background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .neon-text { color: #bef264; }
+        .neon-bg { background-color: #bef264; }
+        .card-custom { background-color: #141414; border: 1px solid #262626; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-custom:hover { border-color: #bef264; transform: translateY(-8px); box-shadow: 0 20px 40px -20px rgba(190, 242, 100, 0.2); }
+        .badge { background: #1a1a1a; border: 1px solid #333; color: #bef264; font-size: 9px; padding: 2px 10px; border-radius: 99px; font-weight: 800; letter-spacing: 0.05em; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); z-index: 100; align-items: center; justify-content: center; padding: 20px; }
+        .modal-content { background-color: #141414; border: 1px solid #262626; max-width: 650px; width: 100%; border-radius: 2rem; position: relative; box-shadow: 0 0 40px rgba(190, 242, 100, 0.1); }
+        .glow-button { background-color: #bef264; color: #000; font-weight: 800; padding: 0.75rem 2rem; border-radius: 9999px; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(189, 242, 100, 0.4); }
+        @media (max-width: 640px) {
+            body { padding-top: 60px; }
+            h1 { font-size: 2.3rem !important; line-height: 1.1 !important; }
+            .modal-content { padding: 1.5rem !important; border-radius: 1.5rem; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="nav-glass">
+        <div class="flex justify-between items-center p-4 md:p-5 max-w-6xl mx-auto">
+            <a href="index.html" class="text-lg md:text-xl font-bold neon-text tracking-tighter">Portfolio</a>
+            <div class="flex items-center gap-4 md:gap-8 text-[9px] md:text-[10px] font-black uppercase tracking-widest">
+                <a href="projects.html" class="flex items-center gap-1.5 text-white underline decoration-lime-400 decoration-2 underline-offset-8">
+                    <i data-lucide="code-2" class="w-3.5 h-3.5 text-lime-400"></i> <span class="hidden sm:inline">Projects</span>
+                </a>
+                <a href="index.html" class="flex items-center gap-1.5 text-gray-400 hover:text-white transition">
+                    <i data-lucide="user" class="w-3.5 h-3.5 text-lime-400"></i> <span class="hidden sm:inline">About Me</span>
+                </a>
+                <a href="contact.html" class="flex items-center gap-1.5 text-gray-400 hover:text-white transition">
+                    <i data-lucide="send" class="w-3.5 h-3.5 text-lime-400"></i> <span class="hidden sm:inline">Contact</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="max-w-6xl mx-auto px-6 py-12 md:py-20">
+        <div class="mb-12 md:mb-16 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight">What I've built so far</h1>
+            <p class="text-gray-500 text-base md:text-lg">Projects where I've applied my learning in Data Science and AI.</p>
+            <a href="https://github.com/nicorizz04" target="_blank" class="inline-flex items-center gap-2 mt-4 neon-text font-bold text-sm hover:underline">
+                GitHub Repo <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div class="card-custom rounded-3xl overflow-hidden flex flex-col h-full">
+                <img src="images/real_estate.png" alt="Real Estate" class="h-48 w-full object-cover">
+                <div class="p-6 md:p-8 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="badge uppercase">Python</span><span class="badge uppercase">Pandas</span><span class="badge uppercase">Scikit-Learn</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-3">Real Estate App</h3>
+                    <p class="text-gray-400 text-xs mb-6 flex-grow">Market analysis using scraping and linear regression.</p>
+                    <button onclick="openModal('real-estate')" class="inline-flex items-center gap-2 text-[10px] font-black neon-text uppercase tracking-widest hover:gap-3 transition-all">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></button>
+                </div>
+            </div>
+
+            <div class="card-custom rounded-3xl overflow-hidden flex flex-col h-full">
+                <img src="images/flight.png" alt="Flight Hub" class="h-48 w-full object-cover">
+                <div class="p-6 md:p-8 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="badge uppercase">Data Science</span><span class="badge uppercase">Statistics</span><span class="badge uppercase">Python</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-3">Flight Reliability Hub</h3>
+                    <p class="text-gray-400 text-xs mb-6 flex-grow">Exploring delay patterns with logistic regression.</p>
+                    <button onclick="openModal('flight-reliability')" class="inline-flex items-center gap-2 text-[10px] font-black neon-text uppercase tracking-widest hover:gap-3 transition-all">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></button>
+                </div>
+            </div>
+
+            <div class="card-custom rounded-3xl overflow-hidden flex flex-col h-full">
+                <img src="images/circuit.png" alt="Oscillator" class="h-48 w-full object-cover">
+                <div class="p-6 md:p-8 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="badge uppercase">Electronics</span><span class="badge uppercase">TCAD</span><span class="badge uppercase">Circuit design</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-3">Wien Bridge Oscillator</h3>
+                    <p class="text-gray-400 text-xs mb-6 flex-grow">Analog design and sine wave simulation.</p>
+                    <button onclick="openModal('wien-bridge')" class="inline-flex items-center gap-2 text-[10px] font-black neon-text uppercase tracking-widest hover:gap-3 transition-all">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></button>
+                </div>
+            </div>
+
+            <div class="card-custom rounded-3xl overflow-hidden flex flex-col h-full">
+                <img src="images/ai.png" alt="AI Labs" class="h-48 w-full object-cover">
+                <div class="p-6 md:p-8 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="badge uppercase">Python</span><span class="badge uppercase">Matplotlib</span><span class="badge uppercase">ML</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-3">AI Labs</h3>
+                    <p class="text-gray-400 text-xs mb-6 flex-grow">Fundamentals of data analysis and ML.</p>
+                    <button onclick="openModal('ai-labs')" class="inline-flex items-center gap-2 text-[10px] font-black neon-text uppercase tracking-widest hover:gap-3 transition-all">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></button>
+                </div>
+            </div>
+
+            <div class="card-custom rounded-3xl overflow-hidden flex flex-col h-full">
+                <img src="images/tickets.png" alt="Tickets" class="h-48 w-full object-cover">
+                <div class="p-6 md:p-8 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="badge uppercase">Full Stack</span><span class="badge uppercase">Logic</span><span class="badge uppercase">web dev</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-3">Tickets System</h3>
+                    <p class="text-gray-400 text-xs mb-6 flex-grow">Backend logic for managing reservations.</p>
+                    <button onclick="openModal('tickets')" class="inline-flex items-center gap-2 text-[10px] font-black neon-text uppercase tracking-widest hover:gap-3 transition-all">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></button>
+                </div>
+            </div>
+
+            <div class="card-custom rounded-3xl overflow-hidden flex flex-col h-full border-dashed">
+                <img src="images/web.png" alt="Portfolio" class="h-48 w-full object-cover">
+                <div class="p-6 md:p-8 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="badge uppercase">HTML</span><span class="badge uppercase">Tailwind CSS</span><span class="badge uppercase">JavaScript</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-3">Professional Portfolio</h3>
+                    <p class="text-gray-400 text-xs mb-6 flex-grow">Modern site showcase for my journey.</p>
+                    <button onclick="openModal('portfolio')" class="inline-flex items-center gap-2 text-[10px] font-black neon-text uppercase tracking-widest hover:gap-3 transition-all">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="projectModal" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-content overflow-hidden" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition z-20">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modalBody" class="p-6 md:p-12"></div>
+        </div>
+    </div>
+
+    <footer class="py-12 text-center border-t border-zinc-900 mt-20">
+        <p class="text-[10px] text-gray-500 tracking-widest uppercase font-bold italic">© 2026 Nicorici Ioan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const projectData = {
+            'real-estate': { title: 'Bucharest Real Estate Intelligence', tags: ['Python', 'Pandas', 'Scikit-Learn'], desc: 'Market analysis using linear regression to estimate prices based on surface and location.', github: 'https://github.com/nicorizz04/real_estate', website: 'https://realestate-qnc6r3duqflxjpslxnbrxq.streamlit.app/' },
+            'flight-reliability': { title: 'Flight Reliability Hub', tags: ['Python', 'Statistics', 'Data Science'], desc: 'Exploring flight delay patterns via logistic regression on synthetic datasets.', github: 'https://github.com/nicorizz04/flight_analysis', website: 'https://flightanalysis-c3pprcp3pqdwgut8bd84cd.streamlit.app/' },
+            'wien-bridge': { title: 'Wien Bridge Oscillator', tags: ['Electronics', 'TCAD', 'Circuit Design'], desc: 'Design and simulation of a stable sine wave oscillator optimized for minimal distortion.', github: 'https://github.com/nicorizz04/P1-Wien-Bridge-Oscillator' },
+            'ai-labs': { title: 'AI Labs', tags: ['Python', 'Matplotlib', 'ML'], desc: 'Hands-on laboratories covering fundamentals of data analysis and ML algorithms.', github: 'https://github.com/nicorizz04/AI-Labs' },
+            'tickets': { title: 'Tickets System', tags: ['Full Stack', 'Logic', 'WEB DEV'], desc: 'Backend logic for managing ticket reservations and storage efficiency.', github: 'https://github.com/nicorizz04/tickets', website: 'https://project-no1-a9354.web.app/' },
+            'portfolio': { title: 'Professional Portfolio', tags: ['HTML', 'Tailwind CSS', 'JavaScript'], desc: 'Modern portfolio site optimized for performance and aesthetics.', github: 'https://github.com/nicorizz04/WEBcv' }
+        };
+        function openModal(id) {
+            const data = projectData[id];
+            const body = document.getElementById('modalBody');
+            const websiteBtn = data.website ? `<a href="${data.website}" target="_blank" class="glow-button flex items-center justify-center gap-2 text-[10px] uppercase tracking-widest mb-4 sm:mb-0">Website <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>` : '';
+            body.innerHTML = `<h2 class="text-2xl md:text-3xl font-extrabold text-white mb-4">${data.title}</h2><div class="flex flex-wrap gap-2 mb-6">${data.tags.map(t => `<span class="badge">${t}</span>`).join('')}</div><p class="text-gray-400 text-sm mb-10">${data.desc}</p><div class="flex flex-col sm:flex-row gap-4">${websiteBtn}<a href="${data.github}" target="_blank" class="bg-transparent border border-zinc-700 text-white font-bold px-6 py-3 rounded-full hover:bg-zinc-900 transition flex items-center justify-center gap-2 text-[10px] uppercase tracking-widest">Source <i data-lucide="github" class="w-3.5 h-3.5"></i></a></div>`;
+            document.getElementById('projectModal').style.display = 'flex';
+            lucide.createIcons();
+        }
+        function closeModal() { document.getElementById('projectModal').style.display = 'none'; }
+    </script>
+</body>
+</html>

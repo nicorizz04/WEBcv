@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ro" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Nicorici Ioan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        body { background-color: #0a0a0a; color: #d1d5db; padding-top: 70px; }
+        .nav-glass { position: fixed; top: 0; left: 0; width: 100%; z-index: 50; background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .neon-text { color: #bef264; }
+        .neon-bg { background-color: #bef264; }
+        .card-custom { background-color: #141414; border: 1px solid #262626; transition: all 0.3s ease; }
+        .card-custom:hover { border-color: #bef264; }
+        @media (max-width: 640px) {
+            body { padding-top: 60px; }
+            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; }
+            main { padding-top: 3rem !important; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="nav-glass">
+        <div class="flex justify-between items-center p-4 md:p-5 max-w-6xl mx-auto">
+            <a href="index.html" class="text-lg md:text-xl font-bold neon-text tracking-tighter">Portfolio</a>
+            <div class="flex items-center gap-4 md:gap-8 text-[9px] md:text-[10px] font-black uppercase tracking-widest">
+                <a href="projects.html" class="flex items-center gap-1.5 text-gray-400 hover:text-white transition"><i data-lucide="code-2" class="w-3.5 h-3.5 text-lime-400"></i> <span class="hidden sm:inline">Projects</span></a>
+                <a href="index.html" class="flex items-center gap-1.5 text-gray-400 hover:text-white transition"><i data-lucide="user" class="w-3.5 h-3.5 text-lime-400"></i> <span class="hidden sm:inline">About Me</span></a>
+                <a href="contact.html" class="flex items-center gap-1.5 text-white underline decoration-lime-400 decoration-2 underline-offset-8"><i data-lucide="send" class="w-3.5 h-3.5 text-lime-400"></i> <span class="hidden sm:inline">Contact</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto py-12 md:py-24 px-6 text-center">
+        <div class="mb-12 md:mb-20">
+            <h1 class="text-4xl md:text-7xl font-extrabold text-white mb-6 tracking-tighter leading-tight">
+                Let's build <br/><span class="neon-text">something great.</span>
+            </h1>
+            <p class="text-base md:text-lg text-gray-400 max-w-xl mx-auto font-medium leading-relaxed">
+                I'm currently looking for internships and collaboration opportunities in Electronics and Software.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12">
+            <a href="mailto:ioannes.nicorici@gmail.com" class="card-custom p-6 md:p-8 rounded-3xl flex items-center gap-4 md:gap-6 group">
+                <div class="w-10 h-10 md:w-12 md:h-12 neon-bg rounded-2xl flex items-center justify-center text-black shadow-[0_0_20px_rgba(190,242,100,0.3)] shrink-0">
+                    <i data-lucide="mail" class="w-5 h-5 md:w-6 md:h-6"></i>
+                </div>
+                <div class="text-left overflow-hidden">
+                    <h4 class="text-white font-bold uppercase text-[9px] md:text-[10px] tracking-widest opacity-50">Email Me</h4>
+                    <p class="text-xs md:text-sm font-semibold group-hover:neon-text transition truncate">ioannes.nicorici@gmail.com</p>
+                </div>
+            </a>
+            
+            <a href="https://www.linkedin.com/in/nicorici-ioan-185a4b217/" target="_blank" class="card-custom p-6 md:p-8 rounded-3xl flex items-center gap-4 md:gap-6 group">
+                <div class="w-10 h-10 md:w-12 md:h-12 neon-bg rounded-2xl flex items-center justify-center text-black shadow-[0_0_20px_rgba(190,242,100,0.3)] shrink-0">
+                    <i data-lucide="linkedin" class="w-5 h-5 md:w-6 md:h-6"></i>
+                </div>
+                <div class="text-left overflow-hidden">
+                    <h4 class="text-white font-bold uppercase text-[9px] md:text-[10px] tracking-widest opacity-50">LinkedIn</h4>
+                    <p class="text-xs md:text-sm font-semibold group-hover:neon-text transition truncate">Nicorici Ioan</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="neon-bg p-8 md:p-16 rounded-[2.5rem] md:rounded-[3rem] text-black text-center relative overflow-hidden shadow-2xl shadow-lime-400/10">
+            <div class="relative z-10">
+                <h2 class="text-2xl md:text-4xl font-black mb-4 uppercase tracking-tighter">Available for Internships</h2>
+                <p class="font-bold text-black/70 mb-6 md:mb-8 max-w-md mx-auto italic text-xs md:text-sm">
+                    "Passionate about finding clean, simple ways to bring hardware and software together."
+                </p>
+                <a href="mailto:ioannes.nicorici@gmail.com" class="inline-block bg-black text-white font-black px-8 md:px-10 py-3 md:py-4 rounded-full hover:scale-105 transition shadow-2xl uppercase text-[10px] md:text-xs tracking-widest">
+                    Get in touch
+                </a>
+            </div>
+            <i data-lucide="zap" class="absolute -right-6 -bottom-6 md:-right-10 md:-bottom-10 w-48 h-48 md:w-64 md:h-64 text-black/5 rotate-12"></i>
+        </div>
+    </main>
+
+    <footer class="py-12 text-center border-t border-zinc-900 mt-20">
+        <p class="text-[10px] text-gray-600 tracking-widest uppercase font-bold italic">© 2026 Nicorici Ioan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
